@@ -36,14 +36,13 @@ export function useParallax(options: ParallaxOptions = {}) {
         start,
         end,
         scrub,
-        ease,
       }
     })
 
     // Create parallax effect
     tl.to(element, {
       y: `${speed * 100}%`,
-      ease: "none"
+      ease: ease
     })
 
     return () => {
@@ -78,7 +77,7 @@ export function useParallaxShapes() {
           onUpdate: (self) => {
             // Only apply to elements with data-parallax attribute
             if (shape.hasAttribute('data-parallax')) {
-              shape.style.transform = `translateY(${self.progress * speed * 50}%)`
+              (shape as HTMLElement).style.transform = `translateY(${self.progress * speed * 50}%)`
             }
           }
         }

@@ -2,6 +2,11 @@
 
 import { useEffect, useRef } from 'react'
 
+// Declare gtag for TypeScript
+declare global {
+  var gtag: (...args: any[]) => void
+}
+
 interface PerformanceMetrics {
   fcp: number // First Contentful Paint
   lcp: number // Largest Contentful Paint
@@ -55,7 +60,8 @@ export default function PerformanceMonitor() {
       const entries = list.getEntries()
       entries.forEach((entry) => {
         if (entry.entryType === 'first-input') {
-          metricsRef.current.fid = entry.processingStart - entry.startTime
+          const firstInputEntry = entry as any
+          metricsRef.current.fid = firstInputEntry.processingStart - firstInputEntry.startTime
           console.log('FID:', metricsRef.current.fid)
         }
       })
@@ -66,8 +72,9 @@ export default function PerformanceMonitor() {
     const clsObserver = new PerformanceObserver((list) => {
       let clsValue = 0
       for (const entry of list.getEntries()) {
-        if (!entry.hadRecentInput) {
-          clsValue += (entry as any).value
+        const layoutShiftEntry = entry as any
+        if (!layoutShiftEntry.hadRecentInput) {
+          clsValue += layoutShiftEntry.value
         }
       }
       metricsRef.current.cls = clsValue

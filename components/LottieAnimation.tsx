@@ -12,7 +12,7 @@ interface LottieAnimationProps {
   style?: React.CSSProperties
   onComplete?: () => void
   onLoopComplete?: () => void
-  onEnterFrame?: (frame: number) => void
+  onEnterFrame?: (args: any) => void
 }
 
 export default function LottieAnimation({

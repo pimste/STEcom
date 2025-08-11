@@ -153,11 +153,13 @@ export default function Services({ language }: ServicesProps) {
           // Rij 1: IT Support (2x2) + Website (1x2) + Klaar om te beginnen (1x3 - start in rij 1)
           {
             ...t.services.find(s => s.id === 'it-support')!,
-            size: 'large' as const
+            size: 'large' as const,
+            type: 'service' as const
           },
           {
             ...t.services.find(s => s.id === 'websites')!,
-            size: 'tall' as const
+            size: 'tall' as const,
+            type: 'service' as const
           },
           {
             id: 'contact-teaser',
@@ -186,7 +188,8 @@ export default function Services({ language }: ServicesProps) {
           },
           {
             ...t.services.find(s => s.id === 'automation')!,
-            size: 'tall' as const
+            size: 'tall' as const,
+            type: 'service' as const
           },
           
           
@@ -204,11 +207,13 @@ export default function Services({ language }: ServicesProps) {
           },
           {
             ...t.services.find(s => s.id === 'performance')!,
-            size: 'small' as const
+            size: 'small' as const,
+            type: 'service' as const
           },
           {
             ...t.services.find(s => s.id === 'analytics')!,
-            size: 'small' as const
+            size: 'small' as const,
+            type: 'service' as const
           },
           {
             id: 'image-placeholder',
