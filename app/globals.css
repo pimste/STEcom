@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for ScrollSection */
+.scroll-section-nav button.active {
+  @apply bg-blue-100 text-blue-700 scale-110 shadow-lg;
+}
+
+.scroll-section-nav button:not(.active) {
+  @apply text-gray-400 hover:text-gray-600;
+}
+
+.scroll-section-nav button.active span:first-child {
+  @apply scale-125;
+}
+
+.scroll-section-nav button:not(.active) span:first-child {
+  @apply scale-100;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    border-color: theme('colors.gray.700');
+  }
+  
+  body {
+    @apply font-sans antialiased text-white bg-dark-900 transition-colors duration-300;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-white;
+  }
+  
+  /* 2025 Fluid Typography */
+  .fluid-text-sm { font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem); }
+  .fluid-text-base { font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem); }
+  .fluid-text-lg { font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem); }
+  .fluid-text-xl { font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.875rem); }
+  .fluid-text-2xl { font-size: clamp(1.5rem, 1.3rem + 1vw, 2.25rem); }
+  .fluid-text-3xl { font-size: clamp(1.875rem, 1.6rem + 1.375vw, 3rem); }
+  .fluid-text-4xl { font-size: clamp(2.25rem, 1.9rem + 1.75vw, 3.75rem); }
+  .fluid-text-5xl { font-size: clamp(3rem, 2.5rem + 2.5vw, 4.5rem); }
+  .fluid-text-6xl { font-size: clamp(3.75rem, 3rem + 3.75vw, 6rem); }
+  
+  /* Smooth focus indicators for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-electric-blue ring-offset-2 ring-offset-dark-900 transition-all duration-200;
+  }
+  
+  /* Smooth scrolling with GPU acceleration */
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  /* Selection colors */
+  ::selection {
+    background: rgba(0, 245, 255, 0.3);
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background: rgba(0, 245, 255, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+  /* Neon Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-electric-blue to-electric-purple hover:from-electric-purple hover:to-electric-pink focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-electric-blue rounded-xl shadow-lg hover:shadow-2xl hover:shadow-electric-blue/50 transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-300 bg-dark-700 border-2 border-gray-600 rounded-xl hover:border-electric-green hover:text-electric-green hover:bg-dark-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-electric-green transition-all duration-300;
+  }
+  
+  .btn-neon {
+    @apply relative overflow-hidden px-8 py-4 bg-gradient-to-r from-electric-blue to-electric-purple rounded-xl font-bold text-white transition-all duration-300;
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  }
+  
+  .btn-neon:hover {
+    box-shadow: 0 0 40px rgba(0, 245, 255, 0.8);
+    transform: scale(1.05);
+  }
+  
+  /* Cyber Card Styles */
+  .glass-card {
+    @apply bg-dark-800/80 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-lg hover:shadow-2xl hover:border-gray-500 transition-all duration-300;
+  }
+  
+  .neon-card {
+    @apply bg-gradient-to-br from-dark-800 to-dark-700 border border-gray-600 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .neon-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: conic-gradient(from 0deg, transparent, rgba(0, 245, 255, 0.5), transparent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: subtract;
+    padding: 2px;
+  }
+  
+  .neon-card:hover::before {
+    opacity: 1;
+  }
+  
+  .cyber-grid {
+    background-image: radial-gradient(circle, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Neon Text Styles */
+  .text-emphasis {
+    @apply text-electric-blue font-semibold;
+  }
+  
+  .text-subtle {
+    @apply text-gray-400;
+  }
+  
+  .text-neon {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+  
+  .text-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    }
+    to {
+      text-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
+    }
+  }
+  
+  /* Layout */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* 2025 Hover Effects */
+  .magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .magnetic-hover:hover {
+    transform: translate3d(var(--mouse-x, 0), var(--mouse-y, 0), 0) scale(1.02);
+  }
+  
+  /* Smooth reveal animations */
+  .reveal-up {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .reveal-up.in-view {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a1a1b;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #00f5ff, #8b5cf6);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #8b5cf6, #ec4899);
+  }
+  
+  /* Loading animations */
+  @keyframes pulse-neon {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 40px rgba(0, 245, 255, 0.8);
+    }
+  }
+  
+  .pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite;
+  }
+  
+  /* Scroll snap styles */
+  .scroll-container {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .scroll-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  
+  /* Scroll lock styles */
+  .scroll-locked {
+    overflow: hidden !important;
+  }
+}
