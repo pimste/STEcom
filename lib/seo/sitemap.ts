@@ -1,4 +1,4 @@
-import { seoConfig } from './config';
+import { seoConfig, keywordClusters } from './config';
 
 export interface SitemapURL {
   loc: string;

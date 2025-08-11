@@ -47,7 +47,7 @@ export default function ProjectTestimonials({ project }: ProjectTestimonialsProp
                 
                 <div className="flex-1">
                   <blockquote className="text-slate-700 leading-relaxed mb-6">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
                   
                   <div className="border-t border-slate-200 pt-4">

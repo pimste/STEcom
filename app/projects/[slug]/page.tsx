@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getProjectBySlug } from '@/lib/projects'
-import { SEO } from '@/components/SEO'
+import SEOEnhanced from '@/components/SEOEnhanced'
 import ProjectHero from '@/components/projects/ProjectHero'
 import ProjectOverview from '@/components/projects/ProjectOverview'
 import ProjectMetrics from '@/components/projects/ProjectMetrics'
@@ -34,11 +34,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <>
-      <SEO 
-        title={project.seoTitle}
-        description={project.seoDescription}
-        keywords={project.seoKeywords.join(', ')}
-        url={`https://stecom.nl/projects/${project.slug}`}
+      <SEOEnhanced 
+        metadata={{
+          title: project.seoTitle,
+          description: project.seoDescription,
+          keywords: project.seoKeywords,
+          canonical: `https://stecom.nl/projects/${project.slug}`,
+          ogTitle: project.title,
+          ogDescription: project.seoDescription,
+          ogImage: project.heroImage
+        }}
       />
       
       <main className="min-h-screen bg-white">

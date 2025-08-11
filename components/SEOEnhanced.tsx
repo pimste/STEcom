@@ -71,7 +71,7 @@ export default function SEOEnhanced({
       {/* Basic Meta Tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={allKeywords.join(', ')}} />
+      <meta name="keywords" content={allKeywords.join(', ')} />
       <meta name="author" content="STEcom" />
       <meta name="robots" content={`${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`} />
       

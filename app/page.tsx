@@ -109,7 +109,7 @@ export default function Home() {
                     <button
                       key={item.id}
                       onClick={() => {
-                        const element = document.getElementById(item.id)
+                        const element = document.getElementById(item.id!)
                         if (element) {
                           element.scrollIntoView({ behavior: 'smooth' })
                           // If clicking on "Hoe we werken", also reset the scroll section to first item

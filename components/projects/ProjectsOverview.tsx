@@ -17,12 +17,12 @@ export default function ProjectsOverview({ projects }: ProjectsOverviewProps) {
 
   // Get unique industries and statuses
   const industries = useMemo(() => {
-    const unique = [...new Set(projects.map(p => p.industry))]
+    const unique = Array.from(new Set(projects.map(p => p.industry)))
     return ['all', ...unique]
   }, [projects])
 
   const statuses = useMemo(() => {
-    const unique = [...new Set(projects.map(p => p.status))]
+    const unique = Array.from(new Set(projects.map(p => p.status)))
     return ['all', ...unique]
   }, [projects])
 
