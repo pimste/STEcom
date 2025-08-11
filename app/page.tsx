@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import SEO from '@/components/SEO'
 import { initAnimations, cleanupAnimations } from '@/lib/animations'
 import { LoadingAnimation } from '@/components/LottieAnimation'
@@ -92,32 +93,45 @@ export default function Home() {
                   { id: 'hero', label: 'Home' },
                   { id: 'adaline-scroll', label: 'Hoe we werken' },
                   { id: 'showcase', label: 'My Work' },
+                  { href: '/projects', label: 'Portfolio' },
                 ].map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => {
-                      const element = document.getElementById(item.id)
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' })
-                        // If clicking on "Hoe we werken", also reset the scroll section to first item
-                        if (item.id === 'adaline-scroll') {
-                          // Small delay to ensure scroll completes first
-                          setTimeout(() => {
-                            const scrollSection = document.querySelector('[data-section]')
-                            if (scrollSection) {
-                              // Trigger a custom event to reset the scroll section
-                              window.dispatchEvent(new CustomEvent('resetScrollSection'))
-                            }
-                          }, 500)
+                  item.href ? (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group relative block w-3 h-3 bg-slate-300 rounded-full hover:bg-blue-500 transition-all duration-300 hover:scale-125"
+                    >
+                      <span className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white text-slate-700 px-3 py-1 rounded text-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-200">
+                        {item.label}
+                      </span>
+                    </Link>
+                  ) : (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        const element = document.getElementById(item.id)
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' })
+                          // If clicking on "Hoe we werken", also reset the scroll section to first item
+                          if (item.id === 'adaline-scroll') {
+                            // Small delay to ensure scroll completes first
+                            setTimeout(() => {
+                              const scrollSection = document.querySelector('[data-section]')
+                              if (scrollSection) {
+                                // Trigger a custom event to reset the scroll section
+                                window.dispatchEvent(new CustomEvent('resetScrollSection'))
+                              }
+                            }, 500)
+                          }
                         }
-                      }
-                    }}
-                    className="group relative block w-3 h-3 bg-slate-300 rounded-full hover:bg-blue-500 transition-all duration-300 hover:scale-125"
-                  >
-                    <span className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white text-slate-700 px-3 py-1 rounded text-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-200">
-                      {item.label}
-                    </span>
-                  </button>
+                      }}
+                      className="group relative block w-3 h-3 bg-slate-300 rounded-full hover:bg-blue-500 transition-all duration-300 hover:scale-125"
+                    >
+                      <span className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white text-slate-700 px-3 py-1 rounded text-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap border border-slate-200">
+                        {item.label}
+                      </span>
+                    </button>
+                  )
                 ))}
               </div>
             </nav>
