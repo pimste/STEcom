@@ -81,10 +81,8 @@ export default function ProjectsOverview({ projects }: ProjectsOverviewProps) {
                 <div className="text-slate-600">Voltooid</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-slate-800">
-                  {Math.round(projects.reduce((sum, p) => sum + parseInt(p.roi.replace('%', '')), 0) / projects.length)}%
-                </div>
-                <div className="text-slate-600">Gem. ROI</div>
+                <div className="text-3xl font-bold text-slate-800">Spectaculair</div>
+                <div className="text-slate-600">Traffic groei</div>
               </div>
             </div>
           </motion.div>
@@ -228,7 +226,7 @@ export default function ProjectsOverview({ projects }: ProjectsOverviewProps) {
                           </div>
                           <div className="flex items-center gap-1">
                             <TrendingUp className="w-4 h-4" />
-                            {project.roi}
+                            Spectaculair
                           </div>
                         </div>
                       </div>

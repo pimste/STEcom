@@ -16,6 +16,7 @@ import CTALight from '@/components/CTALight'
 import PreloaderLight from '@/components/PreloaderLight'
 
 
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -93,6 +94,7 @@ export default function Home() {
                   { id: 'hero', label: 'Home' },
                   { id: 'adaline-scroll', label: 'Hoe we werken' },
                   { id: 'showcase', label: 'My Work' },
+
                   { href: '/projects', label: 'Portfolio' },
                 ].map((item) => (
                   item.href ? (

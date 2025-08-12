@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { SEOPerformanceController } from '../../../../lib/seo/performance';
+import { SEOPerformanceController } from '@/lib/seo/performance';
 
 const performanceController = new SEOPerformanceController();
 

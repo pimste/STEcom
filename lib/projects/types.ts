@@ -19,43 +19,12 @@ export interface ProjectMetric {
   color: 'green' | 'blue' | 'purple' | 'orange' | 'red'
 }
 
-export interface CostBreakdown {
-  item: string
-  before: string
-  after: string
-  savings: string
-  description: string
-}
-
-export interface MarketingChannel {
-  name: string
-  budget: string
-  results: string
-  roi: string
-  description: string
-}
-
 export interface SEOImprovement {
   metric: string
   before: string
   after: string
   improvement: string
   impact: string
-}
-
-export interface CommunicationLog {
-  date: string
-  type: 'meeting' | 'email' | 'call' | 'presentation'
-  summary: string
-  outcome: string
-}
-
-export interface DevelopmentPhase {
-  phase: string
-  duration: string
-  description: string
-  technologies: string[]
-  deliverables: string[]
 }
 
 export interface Project {
@@ -85,19 +54,7 @@ export interface Project {
   
   // Detailed Metrics
   performanceMetrics: ProjectMetric[]
-  costSavings: CostBreakdown[]
-  marketingResults: MarketingChannel[]
   seoImprovements: SEOImprovement[]
-  
-  // Process
-  developmentPhases: DevelopmentPhase[]
-  communicationLog: CommunicationLog[]
-  
-  // Business Impact
-  roi: string
-  paybackPeriod: string
-  annualSavings: string
-  competitiveAdvantages: string[]
   
   // Technical Details
   technologies: {
@@ -111,12 +68,6 @@ export interface Project {
   challenges: string[]
   solutions: string[]
   results: string[]
-  testimonials?: {
-    quote: string
-    author: string
-    role: string
-    company: string
-  }[]
   
   // SEO
   seoTitle: string

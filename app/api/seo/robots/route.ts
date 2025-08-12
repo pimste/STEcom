@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateRobotsTxt } from '../../../../lib/seo/sitemap';
+import { generateRobotsTxt } from '@/lib/seo/sitemap';
 
 export async function GET(request: NextRequest) {
   try {

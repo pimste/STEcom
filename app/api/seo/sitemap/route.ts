@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateDynamicSitemap, generateSitemapXML } from '../../../../lib/seo/sitemap';
+import { generateDynamicSitemap, generateSitemapXML } from '@/lib/seo/sitemap';
 
 export async function GET(request: NextRequest) {
   try {

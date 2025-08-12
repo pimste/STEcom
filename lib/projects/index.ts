@@ -42,13 +42,11 @@ export function generateProjectSitemap() {
 export function getProjectStats() {
   const totalProjects = projects.length
   const completedProjects = projects.filter(p => p.status === 'completed').length
-  const totalROI = projects.reduce((sum, p) => sum + parseInt(p.roi.replace('%', '')), 0)
-  const averageROI = totalROI / totalProjects
 
   return {
     totalProjects,
     completedProjects,
-    averageROI: `${averageROI.toFixed(0)}%`,
+    trafficImprovement: "Spectaculair",
     featuredProjects: projects.filter(p => p.featured).length
   }
 }

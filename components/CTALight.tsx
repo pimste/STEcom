@@ -107,13 +107,16 @@ export default function CTALight() {
                     {option.description}
                   </p>
                   
-                  <motion.button
+                  <motion.a
+                    href={option.action === "Bel me terug" ? "tel:+31612345678" : 
+                          option.action === "Plan een afspraak" ? "mailto:hallo@stecom.nl?subject=Afspraak plannen" :
+                          "mailto:hallo@stecom.nl?subject=Project informatie"}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full py-3 rounded-xl font-medium transition-all duration-300 ${colorClasses[option.color as keyof typeof colorClasses].button}`}
+                    className={`w-full py-3 rounded-xl font-medium transition-all duration-300 ${colorClasses[option.color as keyof typeof colorClasses].button} flex items-center justify-center`}
                   >
                     {option.action}
-                  </motion.button>
+                  </motion.a>
                 </div>
               </motion.div>
             )

@@ -55,8 +55,8 @@ export default function ProjectCTA({ project }: ProjectCTAProps) {
                   <span className="text-white font-bold">✓</span>
                 </div>
                 <div>
-                  <div className="font-semibold">ROI van {project.roi}</div>
-                  <div className="text-slate-300 text-sm">Terugverdiend in {project.paybackPeriod}</div>
+                  <div className="font-semibold">Spectaculaire traffic groei</div>
+                  <div className="text-slate-300 text-sm">Door SEO en LinkedIn ads</div>
                 </div>
               </div>
               
@@ -65,8 +65,8 @@ export default function ProjectCTA({ project }: ProjectCTAProps) {
                   <span className="text-white font-bold">✓</span>
                 </div>
                 <div>
-                  <div className="font-semibold">Jaarlijkse besparing van {project.annualSavings}</div>
-                  <div className="text-slate-300 text-sm">Op operationele kosten</div>
+                  <div className="font-semibold">Verbeterde online zichtbaarheid</div>
+                  <div className="text-slate-300 text-sm">Meer leads en conversies</div>
                 </div>
               </div>
               

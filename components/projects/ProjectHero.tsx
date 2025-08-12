@@ -76,30 +76,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
               {project.longDescription}
             </p>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6">
-              {project.stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl md:text-3xl font-bold text-slate-800 mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-slate-600">
-                    {stat.label}
-                  </div>
-                  {stat.description && (
-                    <div className="text-xs text-slate-500 mt-1">
-                      {stat.description}
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
+
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -136,8 +113,8 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
               <div className="flex items-center gap-3">
                 <TrendingUp className="w-5 h-5 text-slate-500" />
                 <div>
-                  <div className="text-sm text-slate-500">ROI</div>
-                  <div className="font-medium text-slate-800">{project.roi}</div>
+                  <div className="text-sm text-slate-500">Traffic groei</div>
+                  <div className="font-medium text-slate-800">Spectaculair</div>
                 </div>
               </div>
             </div>
@@ -152,12 +129,11 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
           >
             {/* Hero Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <div className="aspect-[4/3] bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">🏗️</div>
-                  <div className="text-slate-600">Project Preview</div>
-                </div>
-              </div>
+              <img
+                src="/images/nibm-proj/Screenshot 2025-08-12 at 13.39.20.png"
+                alt="NIBM Towercranes Homepage"
+                className="w-full h-auto"
+              />
               
               {/* Overlay with project info */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -167,30 +143,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
               </div>
             </div>
 
-            {/* Floating Stats Cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -top-6 -left-6 bg-white rounded-xl shadow-xl p-4 border border-slate-200"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">{project.roi}</div>
-                <div className="text-sm text-slate-600">ROI</div>
-              </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-4 border border-slate-200"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">{project.paybackPeriod}</div>
-                <div className="text-sm text-slate-600">Terugverdientijd</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

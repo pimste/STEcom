@@ -3,11 +3,9 @@ import { getProjectBySlug } from '@/lib/projects'
 import SEOEnhanced from '@/components/SEOEnhanced'
 import ProjectHero from '@/components/projects/ProjectHero'
 import ProjectOverview from '@/components/projects/ProjectOverview'
-import ProjectMetrics from '@/components/projects/ProjectMetrics'
-import ProjectProcess from '@/components/projects/ProjectProcess'
-import ProjectResults from '@/components/projects/ProjectResults'
-import ProjectGallery from '@/components/projects/ProjectGallery'
-import ProjectTestimonials from '@/components/projects/ProjectTestimonials'
+import ProjectSEOImprovements from '@/components/projects/ProjectSEOImprovements'
+
+
 import ProjectCTA from '@/components/projects/ProjectCTA'
 
 interface ProjectPageProps {
@@ -49,11 +47,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <main className="min-h-screen bg-white">
         <ProjectHero project={project} />
         <ProjectOverview project={project} />
-        <ProjectMetrics project={project} />
-        <ProjectProcess project={project} />
-        <ProjectResults project={project} />
-        <ProjectGallery project={project} />
-        <ProjectTestimonials project={project} />
+        <ProjectSEOImprovements project={project} />
         <ProjectCTA project={project} />
       </main>
     </>

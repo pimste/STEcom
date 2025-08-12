@@ -232,21 +232,23 @@ export default function HeroLight() {
           transition={{ duration: 0.8, delay: 1.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <motion.button
+          <motion.a
+            href="#contact"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-4 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Laten we kennismaken
-          </motion.button>
+          </motion.a>
 
-          <motion.button
+          <motion.a
+            href="#showcase"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
             className="px-8 py-4 border-2 border-slate-300 text-slate-700 rounded-xl font-medium hover:border-slate-400 hover:bg-slate-50 transition-all duration-300"
           >
             Bekijk ons werk
-          </motion.button>
+          </motion.a>
         </motion.div>
 
         {/* Gentle scroll indicator - now below buttons */}
